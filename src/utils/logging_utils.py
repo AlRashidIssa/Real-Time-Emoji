@@ -1,8 +1,11 @@
 import logging
 import os
 
-# Define the log directory 
-LOG_DIR = os.path.join(os.path.dirname(__file__), "../ ../logs")
+# Define the log directory relative to this file's location
+LOG_DIR = os.path.join(os.path.dirname(__file__), "/workspaces/Real-Time-Emoji/logs")
+LOG_DIR = os.path.abspath(LOG_DIR)
+print("log Direcotre abspath" ,LOG_DIR)
+
 os.makedirs(LOG_DIR, exist_ok=True)
 
 def setup_logger(name, log_file, level=logging.INFO):
